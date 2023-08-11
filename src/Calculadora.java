@@ -8,33 +8,47 @@ public class Calculadora {
         int numero1 = lector.nextInt();
         System.out.println("Ingrese el número 2");
         int numero2 = lector.nextInt();
-        System.out.println("Ingrese la operación (+, -, *, /)");
+        System.out.println("Ingrese la operación (+, -, *, /, %, ^)");
         char operacion = lector.next().charAt(0);
 
         switch (operacion) {
-            case '+' -> {
+            case '+' :
                 // Operación suma:
                 int suma = numero1 + numero2;
-                System.out.println("La suma es " + suma);
-            }
-            case '-' -> {
+                System.out.println("La suma es: " + suma);
+            break;
+            case '-' :
                 // Operación resta:
                 int resta = numero1 - numero2;
-                System.out.println("La resta es " + resta);
-            }
-            case '*' -> {
+                System.out.println("La resta es: " + resta);
+            break;
+            case '*' :
                 // Operación multiplicación:
                 int multiplicacion = numero1 * numero2;
-                System.out.println("La multiplicación es " + multiplicacion);
-            }
-            case '/' -> {
+                System.out.println("La multiplicación es: " + multiplicacion);
+            break;
+            case '/' :
                 // Operación división:
                 /* Es necesario que uno de los números que intervienen en la división sea double
                 para que el resultado decimal sea aproximado correctamente. **/
                 double division = (double) numero1 / numero2;
-                System.out.println("La división es " + division);
-            }
-            default -> System.out.println("Operación inválida");
+                System.out.println("La división es: " + division);
+            break;
+            case '%' :
+                // Operación residuo:
+
+                double residuo = (double) numero1 % numero2;
+                System.out.println("El residuo de la division: " + residuo);
+            break;
+            case '^' :
+                // Operación potencia:
+
+                double potencia = Math.pow(numero1,numero2);
+                System.out.println("El resultado de la potencia es: " + potencia);
+            break;
+
+            default:
+                System.out.println("Operación inválida");
         }
     }
 }
